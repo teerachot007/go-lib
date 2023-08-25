@@ -2,10 +2,10 @@ package excel
 
 import "github.com/xuri/excelize/v2"
 
-func (e *Excel) OpenExcel(filepath string) (*excelize.File, error) {
+func (e *Excel) OpenExcel(filepath string) error {
 	f, err := excelize.OpenFile(filepath)
 	e.File = f
-	return f, err
+	return err
 }
 
 // "Sheet1" "Sheet2"

@@ -2,14 +2,14 @@ package excel
 
 import "github.com/xuri/excelize/v2"
 
-func (e *Excel) OpenExcel(filepath string) error {
+func (e *Excel) OpenExcel(filepath string) (*excelize.File, error) {
 	f, err := excelize.OpenFile(filepath)
 	e.File = f
-	return err
+	return f, err
 }
 
 // "Sheet1" "Sheet2"
 func (e *Excel) GetRowExcel(getBysheet string) ([][]string, error) {
-	rows, err := e.File.GetRows(getBysheet)
+	rows, err := e.File.GetRows("Sheet1")
 	return rows, err
 }

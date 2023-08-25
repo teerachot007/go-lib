@@ -9,10 +9,6 @@ func (e *Excel) OpenExcel(filepath string) (*excelize.File, error) {
 }
 
 
-
-
-
-
 // "Sheet1" "Sheet2"
 func (e *Excel) GetRowExcel(getBysheet string) ([][]string, error) {
 	rows, err := e.File.GetRows("Sheet1")
